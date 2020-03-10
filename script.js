@@ -1,3 +1,5 @@
+
+// Complete the isValid function below.
 function isValid(s) {
     var arrayOfLetters = [];
     for(var i in s){
@@ -29,15 +31,14 @@ function isValid(s) {
             }
         };
         var bool = false;
-        if( (smallarray.length == 2) && (Math.abs(smallarray[0] - smallarray[1]) == 1) ){
+        if( (smallarray.length == 2) && (arr[smallarray[0]].length == 1 || arr[smallarray[1]].length == 1 ) &&(Math.abs(smallarray[0] - smallarray[1]) == 1) ){
               bool =  true  
         }
         return bool
     }
-    console.log(bigarray);
     if(Object.keys(bigarray).length == 1 || (checkval(bigarray)) ){
         return('YES')  
     }else{
         return('NO')  
     }
-}      
+}
