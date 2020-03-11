@@ -16,29 +16,38 @@ function isValid(s) {
         if(bigarray[repeating[i]] == undefined){
             bigarray[repeating[i]] = [];
             bigarray[repeating[i]].push(letters[i])
-            
+
         }else{
             bigarray[repeating[i]].push(letters[i])  
         }   
     }
     function checkval(arr){
         var smallarray = [];
-        var len = 0;
+        // var len = 0;
         for(var i in arr){
             if(arr[i] != undefined){
-                len += 1;
+                // len += 1;
                 smallarray.push(i)
             }
         };
         var bool = false;
-        if( (smallarray.length == 2) && (arr[smallarray[0]].length == 1 || arr[smallarray[1]].length == 1 ) &&(Math.abs(smallarray[0] - smallarray[1]) == 1) ){
+        if( (smallarray.length == 1) 
+        || 
+        
+        ( smallarray.length == 2 && arr[1].length == 1)
+        ||
+        (smallarray.length == 2 && Math.abs(arr[smallarray[0]].length - arr[smallarray[1]].length ) == 1)
+        ){
+
               bool =  true  
         }
         return bool
     }
-    if(Object.keys(bigarray).length == 1 || (checkval(bigarray)) ){
+    console.log(bigarray)
+    console.log(checkval(bigarray));
+    if(checkval(bigarray)){
         return('YES')  
     }else{
         return('NO')  
     }
-}
+}   
